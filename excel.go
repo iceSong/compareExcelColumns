@@ -93,6 +93,7 @@ func findCellValues(file *excelize.File, sheet string, rowNum int, columns []str
 	compareVal := make([]string, 0)
 	for _, column := range columns {
 		cellVal, _ := file.GetCellValue(sheet, column+strconv.Itoa(rowNum))
+		cellVal = strings.TrimSpace(cellVal)
 		compareVal = append(compareVal, cellVal)
 	}
 	return compareVal
