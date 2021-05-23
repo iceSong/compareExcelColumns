@@ -50,7 +50,7 @@ func main() {
 	// 获取 Sheet1 上所有单元格
 	mainSheet := mainFile.GetSheetName(0)
 	rows, err := mainFile.GetRows(mainSheet)
-	for rowNum := 3; rowNum < len(rows)+1; rowNum++ {
+	for rowNum := 2; rowNum < len(rows)+1; rowNum++ {
 		compareVal := findCellValues(mainFile, mainSheet, rowNum, mainColumns)
 		compare := findPayerCashOut(targetFile, compareVal)
 		if compare {
